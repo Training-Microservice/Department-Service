@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @Slf4j
 //@RequiredArgsConstructor
@@ -22,5 +24,9 @@ public class DepartmentService {
     public Department findDeparmentById(Long departmentId) {
         log.info("inside findDeparmentById ");
         return departmentRepository.findById(departmentId).get();
+    }
+
+    public List<Department> findAllDepartment(){
+        return departmentRepository.findAll();
     }
 }

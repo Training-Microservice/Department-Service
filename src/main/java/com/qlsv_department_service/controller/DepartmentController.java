@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/department")
 @Slf4j
@@ -27,7 +29,7 @@ public class DepartmentController {
     }
 
     @GetMapping("/")
-    public String helloWorld(){
-        return "Hello Trần Thái Minh Tân!";
+    public List<Department> findAllDepartment(){
+        return departmentService.findAllDepartment();
     }
 }
